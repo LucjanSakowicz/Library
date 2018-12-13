@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -17,6 +18,7 @@ import com.library.components.model.bookcomment.BookComment;
 import com.library.components.model.bookreview.Review;
 import com.library.components.model.library.Library;
 import com.library.components.model.vote.Vote;
+
 import lombok.Data;
 
 @Entity
