@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.library.components.model.articlecomment.ArticleComment;
@@ -30,8 +30,8 @@ public class Article {
 	private List<ArticleComment> articleComments=new ArrayList<>();
 	@OneToMany(mappedBy="article")
 	private List<Vote> votes=new ArrayList<>();
-	@ManyToMany(mappedBy="articles")
-	private List<User> users;
+	@ManyToOne
+	private User user;
 	
 	
 	

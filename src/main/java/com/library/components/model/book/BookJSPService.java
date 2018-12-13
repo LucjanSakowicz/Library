@@ -1,11 +1,11 @@
 package com.library.components.model.book;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import com.library.utils.profiles.DevJSP;
 
 @DevJSP
-@Controller
-public class BookJSPController {
+@Service
+public class BookJSPService {
 
 }

@@ -2,10 +2,10 @@ package com.library.components.model.book;
 
 import org.springframework.stereotype.Controller;
 
-import com.library.utils.profiles.DevJSP;
+import com.library.utils.profiles.DevTh;
 
-@DevJSP
+@DevTh
 @Controller
-public class BookJSPController {
+public class BookThController {
 
 }

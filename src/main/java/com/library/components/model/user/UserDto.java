@@ -6,9 +6,8 @@ import lombok.Data;
 public class UserDto {
 	private Long id;
 	private String username;
-	private String password;
 	private String firstName;
 	private String lastName;
-	private boolean isBanned;
-	private Long userRole;
+	private String isBanned;
+	private String userRole;
 }
