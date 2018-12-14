@@ -7,8 +7,11 @@
 <title>LibraryApp</title>
 </head>
 <body>
-	<h1>LibraryApp</h1>
-	<a href="/users">Users</a>
-	<a href="/books">Books</a>
+<h1> UserDetalis</h1>
+
+<h1>${user.username}</h1>
+
+<a href="/">Powrót</a>
+
 </body>
 </html>

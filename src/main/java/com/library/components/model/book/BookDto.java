@@ -7,10 +7,13 @@ import lombok.Data;
 @Data
 public class BookDto {
 	private Long id;
-	private String BookName;
-	private LocalDateTime DatePublished;
+	private String bookName;
+	private LocalDateTime datePublished;
 	private Long ISBN;
 	private Long bookAuthorId;
+	private String bookAuthorFirstName;
+	private String bookAuthorLastName;
 	private Long libraryId;
-
+	
+	
 }

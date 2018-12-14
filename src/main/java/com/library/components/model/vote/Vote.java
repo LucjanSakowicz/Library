@@ -23,8 +23,7 @@ public class Vote {
 		@Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		private Long id;
-		private Integer voteUp;
-		private Integer voteDown;
+		private VoteType votetype;
 		@ManyToOne
 		private ArticleComment articleComment;
 		@ManyToOne
