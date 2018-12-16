@@ -7,11 +7,9 @@
 <title>LibraryApp</title>
 </head>
 <body>
-<h1> BookDetalis</h1>
+	<%@include file="../fragment/header.jspf"%>
+	<h1>${message.title}</h1>
 
-<h1>${book.bookName}</h1>
-
-<a href="/">Powrót</a>
-
+	<h1>${message.text}</h1>
 </body>
 </html>

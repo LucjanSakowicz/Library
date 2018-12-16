@@ -30,14 +30,14 @@ public class UserJSPController {
 	dto.ifPresent(user->{
 		model.addAttribute("user",user);
 	});
-	return "user";
+	return "user/user";
 	}
 	
 	@GetMapping("")
 	public String home(Model model) {
 		List<UserDto> userList=userService.getAllUsers();
 		model.addAttribute("userList", userList);
-		return "users";
+		return "user/users";
 	}
 	
 }

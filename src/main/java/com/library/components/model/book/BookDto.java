@@ -1,6 +1,7 @@
 package com.library.components.model.book;
 
-import java.time.LocalDateTime;
+
+import java.time.LocalDate;
 
 import lombok.Data;
 
@@ -8,7 +9,7 @@ import lombok.Data;
 public class BookDto {
 	private Long id;
 	private String bookName;
-	private LocalDateTime datePublished;
+	private LocalDate datePublished;
 	private Long ISBN;
 	private Long bookAuthorId;
 	private String bookAuthorFirstName;

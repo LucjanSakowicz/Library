@@ -1,6 +1,6 @@
 package com.library.components.model.book;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -27,9 +28,10 @@ public class Book {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String BookName;
-	private LocalDateTime DatePublished; //format daty '2017-10-08 15:00:00'
+	private LocalDate DatePublished; //format daty '2017-10-08 15:00:00'
 	private Long ISBN;
 	@ManyToOne
+	@JoinColumn(name="bookAuthorId")
 	private BookAuthor bookAuthor;
 	@ManyToOne
 	private Library library;
