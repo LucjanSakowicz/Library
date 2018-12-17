@@ -1,6 +1,5 @@
 package com.library.components.model.userrole;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,8 +19,6 @@ public class UserRole {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private LocalDate dateCreated;
-	private LocalDate dateDeleted;
 	private String userRoleName;
 	@OneToMany(mappedBy="userRole")
 	private List<User> users=new ArrayList<>();

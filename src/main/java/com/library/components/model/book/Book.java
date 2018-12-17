@@ -27,8 +27,8 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String BookName;
-	private LocalDate DatePublished; //format daty '2017-10-08 15:00:00'
+	private String bookName;
+	private LocalDate datePublished; //format daty '2017-10-08 15:00:00'
 	private Long ISBN;
 	@ManyToOne
 	@JoinColumn(name="bookAuthorId")

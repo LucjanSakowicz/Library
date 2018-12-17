@@ -5,9 +5,13 @@ import lombok.Data;
 @Data
 public class UserDto {
 	private Long id;
-	private String username;
+	private String userName;
 	private String firstName;
+	private String password;
+	private String email;
 	private String lastName;
-	private String isBanned;
-	private String userRole;
+	private Boolean isBanned;
+	private Long userRoleId;
+	private String userRoleName;
+
 }

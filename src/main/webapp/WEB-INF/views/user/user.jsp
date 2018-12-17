@@ -10,7 +10,7 @@
 <%@include file="../fragment/header.jspf" %>
 <h1> UserDetalis</h1>
 
-<h1>${user.username}</h1>
+<h1>${user.userName}</h1>
 
 
 </body>

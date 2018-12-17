@@ -13,9 +13,10 @@
 		<tr>
 			<th>UserId</th>
 			<th>Username</th>
+			<th>Email</th>
 			<th>FirstName</th>
 			<th>LastName</th>
-			<th>IsBanend</th>
+			<th>IsBanned</th>
 			<th>UserRole</th>
 			<th></th>
 			<th></th>
@@ -24,13 +25,14 @@
 		<c:forEach var="user" items="${userList}">
 			<tr>
 			<th><a href="${pageContext.request.contextPath}/users/${user.id}">${user.id}</a></th>
-			<th>${user.username}</th>
+			<th>${user.userName}</th>
+			<th>${user.email}</th>
 			<th>${user.firstName}</th>
 			<th>${user.lastName}</th>
 			<th>${user.isBanned}</th>
-			<th>${user.userRole}</th>
-			<th><a href="${pageContext.request.contextPath}/books/edit/${user.id}">Edytuj</a>
-			<th><a href="${pageContext.request.contextPath}/books/delete/${user.id}">Usuń</a>
+			<th>${user.userRoleName}</th>
+			<th><a href="${pageContext.request.contextPath}/users/edit/${user.id}">Edytuj</a>
+			<th><a href="${pageContext.request.contextPath}/users/delete/${user.id}">Usuń</a>
 			</tr>
 		</c:forEach>
 	</table>

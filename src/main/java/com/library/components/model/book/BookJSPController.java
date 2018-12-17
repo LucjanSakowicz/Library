@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.library.components.model.user.exceptions.BookIdConflictException;
 import com.library.utils.converters.LocalDateConverter;
 import com.library.utils.messages.Message;
 import com.library.utils.profiles.DevJSP;
@@ -67,7 +66,6 @@ public class BookJSPController {
 		bookDto.setBookAuthorId(bookAuthorId);
 		bookDto.setLibraryId(libraryId);
 		Optional<BookDto> bookSaved = bookService.saveBook(bookDto);
-		
 		bookSaved.ifPresent(u -> {
 			model.addAttribute("message", new Message("Sukces!", "Operacja dodania książki zakończyła się sukcesem!"));
 		});
@@ -78,14 +76,12 @@ public class BookJSPController {
 	public String editBookForm(@PathVariable Long id,Model model) {
 		Optional<BookDto> bookDto=bookService.getBookById(id);
 		bookDto.ifPresent(book->{
-			if(!book.getId().equals(id))
-				throw new BookIdConflictException();
 				model.addAttribute("book",book);
 		});
 		return bookDto.map(u->"book/bookeditform").orElse("message/error");
 	}
 	@PostMapping("/edit")
-	public String editBook(@RequestParam Long bookId, @RequestParam String bookName, @RequestParam String datePublishedString,
+	public String updateBook(@RequestParam Long bookId, @RequestParam String bookName, @RequestParam String datePublishedString,
 			@RequestParam Long ISBN, @RequestParam Long bookAuthorId, @RequestParam Long libraryId, Model model) {	
 		LocalDate datePublished = LocalDateConverter.stringToLocalDate(datePublishedString);
 		BookDto bookDto = new BookDto();
@@ -106,8 +102,6 @@ public class BookJSPController {
 	public String deleteBookForm(@PathVariable Long id,Model model) {
 		Optional<BookDto> bookDto=bookService.getBookById(id);
 		bookDto.ifPresent(book->{
-			if(!book.getId().equals(id))
-				throw new BookIdConflictException();
 				model.addAttribute("book",book);
 		});
 		return bookDto.map(u->"book/bookdeleteform").orElse("message/error");

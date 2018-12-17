@@ -3,7 +3,9 @@ package com.library.components.model.user;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,12 +28,14 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String username;
+	private String userName;
+	//do zahashowaia przy tworzeniu zabezpieczen
 	private String password;
+	private String email;
 	private String firstName;
 	private String lastName;
 	private Boolean isBanned;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private UserRole userRole;
 	@OneToMany(mappedBy="user")
 	private List<Assignment> assignments=new ArrayList<>();
