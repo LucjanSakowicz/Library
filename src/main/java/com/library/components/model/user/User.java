@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotEmpty;
 
 import com.library.components.model.article.Article;
 import com.library.components.model.articlecomment.ArticleComment;
@@ -28,9 +29,13 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotEmpty
+	@Column(unique=true)
 	private String userName;
 	//do zahashowaia przy tworzeniu zabezpieczen
+	@NotEmpty
 	private String password;
+	@NotEmpty
 	private String email;
 	private String firstName;
 	private String lastName;

@@ -16,6 +16,8 @@
 		UserRole:<p><c:out value="${user.userRoleName}">UserRoleName</c:out></p><br>
 		IsBanned:<p><c:out value="${user.isBanned}">IsBanned</c:out></p>
 		<input type="hidden" value="${user.id}" name="userId">
+				<!--  dodanie tokena csrf, nie jest potrzebne dla thymeleafa lub Spring MVC taglib  -->
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 		<input type="submit" value="Usuń!">
 	</form>
 

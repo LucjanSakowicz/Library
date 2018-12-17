@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,8 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.library.components.model.book.BookDto;
-import com.library.components.model.user.exceptions.BookIdConflictException;
 import com.library.components.model.userrole.UserRoleDto;
 import com.library.components.model.userrole.UserRoleService;
 import com.library.utils.messages.Message;
@@ -94,7 +93,6 @@ public class UserJSPController {
 			Optional<UserDto> user=userService.getUserById(userId);
 			user.ifPresent(u->{
 				userDto.setPassword(u.getPassword());
-				System.out.println(u.getPassword());
 			});
 		}else {
 			userDto.setPassword(password);

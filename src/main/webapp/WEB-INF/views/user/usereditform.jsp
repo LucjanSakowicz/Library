@@ -8,7 +8,7 @@
 </head>
 <body>
 	<%@include file="../fragment/header.jspf"%>
-	<form action="/users/edit" method=POST>
+	<form action="${pageContext.request.contextPath}/users/edit" method=POST>
 		Username:<br> <input type="text" value="${user.userName}"
 			name="userName"><br> Password:<br> <input
 			type="password" value="" name="password"><br> Email:<br>
@@ -34,7 +34,9 @@
 		</c:choose>
 		UserRoleName: <br> <input type="text" value="${user.userRoleName}"
 			name="userRoleName"><br> <input type="hidden"
-			value="${user.id}" name="userId"> <input type="submit"
+			value="${user.id}" name="userId"> 
+					<!--  dodanie tokena csrf, nie jest potrzebne dla thymeleafa lub Spring MVC taglib  -->
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/><input type="submit"
 			value="Zapisz zmiany!">
 	</form>
 

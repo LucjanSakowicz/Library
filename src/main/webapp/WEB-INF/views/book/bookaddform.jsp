@@ -40,6 +40,8 @@
 				<br>
 			</c:otherwise>
 		</c:choose>
+				<!--  dodanie tokena csrf, nie jest potrzebne dla thymeleafa lub Spring MVC taglib  -->
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 		<input type="submit" value="Dodaj!">
 	</form>
 

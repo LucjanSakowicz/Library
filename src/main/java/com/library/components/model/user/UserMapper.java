@@ -13,6 +13,7 @@ public class UserMapper {
 
 	public UserMapper(UserRoleService userRoleService) {
 		this.userRoleService = userRoleService;
+		
 	
 	}
 
@@ -34,7 +35,6 @@ public class UserMapper {
 			userRoleService.getUserRoleById(2L).ifPresent(userRole -> {
 				dto.setUserRoleName(userRole.getUserRoleName());
 				dto.setUserRoleId(userRole.getId());
-				System.out.println(dto.getUserRoleId());
 			});
 		}
 		return modelMapper.map(dto, User.class);

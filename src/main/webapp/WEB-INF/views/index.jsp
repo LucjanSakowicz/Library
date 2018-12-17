@@ -7,8 +7,10 @@
 <title>Strona główna</title>
 </head>
 <body>
-	<%@include file="fragment/header.jspf" %>
-
+	<%@include file="fragment/header.jspf"%>
+	<form action="${pageContext.request.contextPath}/logout" method="post">
+		<input type="submit" value="Logout" />
+	</form>
 	<a href="${pageContext.request.contextPath}/users">Users</a>
 	<a href="${pageContext.request.contextPath}/books">Books</a>
 </body>

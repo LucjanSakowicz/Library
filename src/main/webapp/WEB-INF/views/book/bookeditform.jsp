@@ -15,6 +15,8 @@
 		BookAuthorId:<br> <input type="number" value="${book.bookAuthorId}" name="bookAuthorId"><br>
 		LibraryId:<br> <input type="text" value="${book.libraryId}" name="libraryId"><br>
 		<input type="hidden" value="${book.id}" name="bookId">
+				<!--  dodanie tokena csrf, nie jest potrzebne dla thymeleafa lub Spring MVC taglib  -->
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 		<input type="submit" value="Zapisz zmiany!">
 	</form>
 
